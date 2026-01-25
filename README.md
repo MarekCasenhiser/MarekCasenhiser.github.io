@@ -1,4 +1,5 @@
 # MarekCasenhiser.github.io
+I like socks!!!
 
 This is Marek and I made my first website on 1/12/2026!
 
