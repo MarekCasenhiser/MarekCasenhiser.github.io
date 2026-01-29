@@ -1,0 +1,23 @@
+body {
+    background-color: #191724;
+    color: #e0def4;
+}
+p {
+    font-family: sans-serif;
+}
+a {
+    color: #9ccfd8;
+    margin: auto;
+}
+footer{
+    color: #f6c177;
+    margin: auto;
+}
+h1{
+    font-family: 'AdwaitaMono Nerd Font', monospace;
+    margin: 25px;
+}
+h2{
+    font-family: 'AdwaitaMono Nerd Font', monospace;
+    margin: 25px;
+}
