@@ -1,0 +1,16 @@
+
+/* This text is in Papyrus */
+div.pappy { 
+	font-family: "Papyrus" !important; 
+    color:chocolate;
+    background-color: yellow;
+    text-decoration: underline;
+}
+
+h1 {
+    border-top-style: ridge;
+    border-right-style: solid;
+    border-bottom-style: dotted;
+    border-left-style: dashed;
+    border-width: 20px;
+}
