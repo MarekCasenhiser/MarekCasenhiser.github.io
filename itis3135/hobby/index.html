@@ -1,33 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+            <style>
+             @font-face {
+                     font-family: retro;
+                     src: url('fonts/BigBlueTerminal/BigBlueTerm437NerdFont-Regular.ttf')
+             }
+             body {
+                     background-color:#232136;
+                     color:#e3e3dd;
+                     font-family:retro;
+             }
+             p {
+                     color: #f6c177;
+             }
+             blockquote {
+                     color:#e3e3dd;
+                     font-size:20px;
+             }
+             h1 {
+                     color: #f6c177;
+                     white-space: pre;
+                     font-size: 20px;
+             }
+             a {
+                     color: #f6c177;
+             }
+             button {
+                     padding: 1px 6px;
+                     border: 1px outset buttonborder;
+                     border-radius: 3px;
+                     color: buttontext;
+                     background-color: #2a273f;
+                     text-decoration: none;
+                     color:#e3e3dd;
+             }
+             figcaption {
+                     color: #6e6a86;
+                     font-size: 10px;
+                     font-style: italic;
+             }
+
+            </style>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Hobbies</title>
+        <title>Emacs is Great!</title>
         <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
-        <h1>My Hobby :)<h1>
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     </head>
-    <body>
-        <h2>Page here</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <body style="">
+            <header style="background-color:#2a273f">
+                    <h1>
+███████╗███╗   ███╗ █████╗  ██████╗███████╗    ██╗███████╗     ██████╗ ██████╗ ███████╗ █████╗ ████████╗
+██╔════╝████╗ ████║██╔══██╗██╔════╝██╔════╝    ██║██╔════╝    ██╔════╝ ██╔══██╗██╔════╝██╔══██╗╚══██╔══╝
+█████╗  ██╔████╔██║███████║██║     ███████╗    ██║███████╗    ██║  ███╗██████╔╝█████╗  ███████║   ██║
+██╔══╝  ██║╚██╔╝██║██╔══██║██║     ╚════██║    ██║╚════██║    ██║   ██║██╔══██╗██╔══╝  ██╔══██║   ██║
+███████╗██║ ╚═╝ ██║██║  ██║╚██████╗███████║    ██║███████║    ╚██████╔╝██║  ██║███████╗██║  ██║   ██║
+╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝╚══════╝    ╚═╝╚══════╝     ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝
 
-        <h2>Page here</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </h1>
+                    <nav>
+                            <a class="link" data-target="AboutMe" href="#AboutMe">(AboutMe)</a>
+                            <a class="link" data-target="WhatsEmacs" href="#WhatsEmacs">(What is Emacs really?)</a>
+                            <a class="link" data-target="StartEmacs" href="#StartEmacs">(Getting started with Emacs)</a>
+                            <a class="link" data-target="LearnEmacs" href="#LearnEmacs">(Ways to learn Emacs)</a>
+                            <a class="link" data-target="EmacsDaily" href="#EmacsDaily">(How I use emacs)</a>
+                            <a class="link" data-target="WhyEmacs" href="#WhyEmacs">(Why you should use Emacs)</a>
+                    </nav>
+            </header>
+            <main>
+                    <section class="content-section" id="AboutMe">
+	            <h2 style="background-color:#2a273f;color:#e3e3dd;">About Me</h2>
+                    <figure>
+                            <img src="images/me.png" alt="My github page run in eww" width="1400" height="1000">
+                            <figcaption>This is my github run in eww!</figcaption>
+                    </figure>
+	            <blockquote>Sharing is good, and with digital technology, sharing is easy.<br><cite>-Richard Stallman</cite></blockquote>
+	            <p>My name is Marek Casenhiser. I am a junior at UNCC pursuing a degree in computer science.</p>
+	            <p>At the bottom of this page, there should be a few buttons. One leads to my design firm, and the other two are for my github and linkedin. Go check em out!</p>
+                    </section>
 
-        <h2>Page here</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <section class="Main" id="WhatsEmacs">
+	            <h2 style="background-color:#2a273f;color:#e3e3dd;">What is Emacs?</h2>
+                    <figure>
+                            <img src="images/test.png" alt="Various tabs of Emacs that is done with the intention of showing off its capibilities. This is just a test of what Emacs can do." width="1400" height="1000">
+                            <figcaption>The many capibilities of Emacs</figcaption>
+                    </figure>
+	            <blockquote>I use Emacs, which might be thought of as a thermonuclear word processor. <br><cite>-Neal Stephenson</cite></blockquote>
+	            <p>The question you should be asking for any text-editor or IDE is "Can it do the things I need?". For Emacs, the answer is yes. And more. Without touching your mouse. Written entirely in Lisp, Emacs has over 10,000 builtin commands, extensive documentation, and endless customization Emacs is the perfect text-editor for any aspiring hacker/45 year old!</p>
+                    </section>
 
-        <h2>Page here</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <section class="content-section" id="EmacsDaily">
+	            <h2 style="background-color:#2a273f;color:#e3e3dd;">How I Use Emacs in My Daily Life</h2>
+                    <figure>
+                            <img src="images/DailyUse.png" alt="This is a screenshot of the typical things that I might do when developing in Emacs." width="1400" height="1000">
+                            <figcaption>A screenshot of some of the tools mentioned here</figcaption>
+                    </figure>
+	            <p>Here is a list of a few features of Doom Emacs that I tend to use the most. Note that some are external and others are native to Emacs. </p>
+                    <table>
+                            <tr>
+                                    <td>...For webdevelopment</td>
+                                    <td>...For penetration testing and cybersecurity</td>
+                                    <td>...For general devlopment and text traversal</td>
+                            </tr>
+                            <tr>
+                                    <td><a href="https://github.com/snpnoob/simple-httpd">simple-httpd</a></td>
+                                    <td><a href="https://www.gnu.org/software/tramp/">Tramp</a></td>
+                                    <td><a href="https://github.com/magnars/multiple-cursors.el">multiple-cursors</a></td>
+                            </tr>
+                            <tr>
+                                    <td><a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/HTML-Mode.html">html-mode</a></td>
+                                    <td><a href="https://www.masteringemacs.org/article/how-to-get-started-tree-sitter">bash-ts-mode</a></td>
+                                    <td><a href="https://github.com/emacs-evil/evil">evil</a></td>
+                            </tr>
+                            <tr>
+                                    <td><a href="https://github.com/magit/magit">magit</a></td>
+                                    <td><a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Dired.html">dired</a></td>
+                                    <td><a href="https://github.com/joaotavora/yasnippet">yasnippet</a></td>
+                            </tr>
 
-        <h2>Page here</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-        <h2>Page here</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </table>
+                    </section>
 
-        <h2>Page here</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <section class="content-section" id="StartEmacs">
+
+	            <h2 style="background-color:#2a273f;color:#e3e3dd;">Best Times to Start Getting Into Emacs!</h2>
+                    <figure>
+                            <img src="images/oldman.png" alt="Old man Emacs" width="1400" height="1000">
+                            <figcaption>You never stop learning emacs, you just die of old age :)</figcaption>
+                    </figure>
+	            <p>Realistically, there isn't a particularly <i>wrong</i> time to start getting into Emacs. However, I think there are levels of progress as a developer to use the tool that I think would be more beeneficial to other text editors such as VsCode or intellij. <br></p>
+                    <p>For the college students and semi experienced devs: my pitch to use software like this is to keep in mind that a lot of "modern" IDEs are built to pander to begginners. While this is fine initially, many of the extensions offered by VScode burden developers with the use of the mouse (see link on why I use Emacs). Additionally, older IDEs come with a ton of useful documentation and give users the ability to speed up their workflow. If you want to take your programming game to the next level, then Emacs is for you. <br></p>
+                    <p>For the greybeards and technical hobbyists: It is very likely that a lot of you have already heard of a text-editor such as Emacs before and likely have their own opinions on this quirky lisp-interpreter. That being said, for the same reasons why I would reccommend to others to try linux it is worth taking the time to at least mess around with Emacs as a hobby. The potential for customization is endless. So much so that arguably Emacs is more an operating system than a text-editor. Between that and Vi where Vi is more meant as a simple IDE, Emacs gives you much more to work with so why not give it a shot!</p>
+                    </section>
+                    <section class="content-section" id="LearnEmacs">
+
+	            <h2 style="background-color:#2a273f;color:#e3e3dd;">The Best Places to use Emacs!</h2>
+                    <h3>In the confort of your own home!</h3>
+                    <figure>
+                            <img src="images/current.jpeg" alt="This is a photo of me working on this project." width="1400" height="1000">
+                            <figcaption>This is my home!</figcaption>
+                    </figure>
+                    <h3>In the shower!</h3>
+                    <figure>
+                            <img src="images/shower.jpeg" alt="This is a photo of me working on this project." width="1400" height="1000">
+                            <figcaption>Just kidding, Emacs users dont shower</figcaption>
+                    </figure>
+                    <h3>While stressing out in the library about whether or not you will finish a project in time!</h3>
+                    <figure>
+                            <img src="images/library.jpeg" alt="fuckfuckfuckfuckfuckfuckfuckfuck" width="1400" height="1000">
+                            <figcaption>Im lowk stressin</figcaption>
+                    </figure>
+                    </section>
+
+                    <section class="content-section" id="WhyEmacs">
+	            <h2 style="background-color:#2a273f;color:#e3e3dd;">Why I Use Emacs</h2>
+                    <figure>
+                            <img src="images/IUseEmacs.png" alt="Here is just me opening Dired" width="1400" height="1000">
+                            <figcaption>Opening multiple tabs for aura farming purposes.</figcaption>
+                    </figure>
+	            <p>The question that all tinkerers, computer science majors, or developers should ask when picking up new software should always be "is this worth my time?". Now that means a lot of things to a lot of people. To me, I would argue that useful software is important for these reasons: </p>
+                    <ul>
+                            <li>It teaches me something useful</li>
+                            <li>It is faster than what I already use</li>
+                            <li>It gives me more control than what I already use</li>
+                    </ul>
+                            <p>Overwhemingly so, this is the case for the majority of Open-Source software and text editors. Emacs is the <i>king</i> of Open-Source software. Wherein compared to other IDEs such as Visual Studio code or VI while Emacs does have a higher skill curve, Emacs also outcompetes both of these editors in either customizability, speed, or a distinct lack of bloatware and ai slop that only serve the purpose of slowing your computer down. If my rationale was convincing enough for you, then theres a clickable image below that will take you to where you can install Emacs.</p>
+                            <figure>
+                                    <a href="https://www.gnu.org/software/emacs/">
+                                            <img src="images/gnu.png" alt="gnu mascot" width="100" height= "100">
+                                    </a>
+                                    <figcaption>Welcome to the church of emacs</figcaption>
+                            </figure>
+                    </section>
+	    </main>
+        <footer style="background-color:#272822">
+                <a class="button" href="../PageDesignedByMarekEnterprises/index.html">Support my design firm</a>
+                <a class="button" href="https://github.com/MarekCasenhiser/">Github</a>
+                <a class="button" href="https://www.linkedin.com/in/marek-casenhiser-9abb1a353">Linkedin</a>
+        </footer>
     </body>
 
 </html>
