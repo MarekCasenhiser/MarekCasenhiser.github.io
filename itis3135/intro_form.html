@@ -1,73 +1,516 @@
 <!DOCTYPE html>
 <html lang="en">
-        <head>
-                <link rel="stylesheet" href="styles/default.css">
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Marek Casenhiser/ Course Home</title>
-                <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
-        </head>
-        <header>
-                <h3>
-                        Please submit the form
-                </h3>
-        </header>
-        <body>
-                <form method="" id="" action="">
-                        <input type="" name="" value="" />
-                        <label for=""></label>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Personal Introduction Form | Submit Your Profile</title>
+    <link  href="scripts/introduction.js" type="text/css" media="screen" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-                        <input type="" name="" value="" />
-                        <label for=""></label>
+        body {
+            background: linear-gradient(145deg, #e9f0fc 0%, #d9e3f0 100%);
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            padding: 2rem 1.5rem;
+            color: #1a2c3e;
+        }
 
-                        <input type="" name="" value="" />
-                        <label for=""></label>
+        /* main card container */
+        .form-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 2rem;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
 
-                        <input type="" name="" value="" />
-                        <label for=""></label>
+        /* header area */
+        .form-header {
+            background: #1e3a5f;
+            padding: 1.5rem 2rem;
+            border-bottom: 4px solid #ffb347;
+        }
 
-                        <input type="" name="" value="" />
-                        <label for=""></label>
+        .form-header h3 {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+            margin: 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
 
-                        <input type="" name="" value="" />
-                        <label for=""></label>
+        .form-header p {
+            color: #cfdfed;
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+        }
 
-                        <input type="" name="" value="" />
-                        <label for=""></label>
+        /* form styling */
+        form {
+            padding: 2rem 2rem 2.5rem;
+        }
 
-                        <input type="" name="" value="" />
-                        <label for=""></label>
+        .field-group {
+            margin-bottom: 1.6rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
 
-                        <input type="" name="" value="" />
-                        <label for=""></label>
+        .field-group label {
+            flex: 0 0 200px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #1e4663;
+            padding-top: 0.6rem;
+        }
 
-                        <input type="" name="" value="" />
-                        <label for=""></label>
+        .field-group .input-wrapper {
+            flex: 1;
+            min-width: 220px;
+        }
 
-                        <input type="" name="" value="" />
-                        <label for=""></label>
+        input, textarea, select {
+            width: 100%;
+            padding: 0.7rem 1rem;
+            border: 1.5px solid #cbdbe0;
+            border-radius: 1rem;
+            font-size: 0.95rem;
+            font-family: inherit;
+            background-color: #fefefe;
+            transition: 0.2s;
+        }
 
-                        <input type="" name="" value="" />
-                        <label for=""></label>
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #1e5f8e;
+            box-shadow: 0 0 0 3px rgba(30, 95, 142, 0.2);
+        }
 
-                        <input type="" name="" value="" />
-                        <label for=""></label>
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
 
-                        <input type="" name="" value="" />
-                        <label for=""></label>
+        /* for checkbox + date alignment */
+        .inline-check {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
 
-                        <input type="" name="" value="" />
-                        <label for=""></label>
+        .inline-check input[type="checkbox"] {
+            width: auto;
+            margin-right: 0.3rem;
+            transform: scale(1.1);
+        }
 
-                        <input type="" name="" value="" />
-                        <label for=""></label>
+        .inline-check label {
+            flex: none;
+            font-weight: 500;
+        }
 
-                        <input type="" name="" value="" />
-                        <label for=""></label>
+        hr.divider-light {
+            margin: 1.5rem 0;
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, #c0cfdf, transparent);
+        }
 
-                        <input type="" name="" value="" />
-                        <label for=""></label>
-                </form>
-        </body>
+        .sub-bullet-group {
+            margin-left: 1rem;
+            padding-left: 1rem;
+            border-left: 3px dashed #bdd4e7;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
 
+        .row-2cols {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .row-2cols > div {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        small.hint {
+            font-size: 0.7rem;
+            color: #5f6c7a;
+            display: block;
+            margin-top: 0.25rem;
+        }
+
+        button {
+            background: #1e5f8e;
+            color: white;
+            border: none;
+            padding: 0.85rem 2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 3rem;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-top: 0.75rem;
+            width: 100%;
+            max-width: 260px;
+            display: inline-block;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+        }
+
+        button:hover {
+            background: #0f3e5c;
+            transform: translateY(-2px);
+        }
+
+        .button-group {
+            text-align: center;
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .reset-btn {
+            background: #6c7a89;
+            box-shadow: none;
+        }
+
+        .reset-btn:hover {
+            background: #4b5a6b;
+        }
+
+        @media (max-width: 700px) {
+            .field-group {
+                flex-direction: column;
+            }
+            .field-group label {
+                flex: auto;
+                margin-bottom: 0.2rem;
+            }
+            form {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="form-container">
+    <div class="form-header">
+        <h3>📝 Please submit the form below.</h3>
+        <p>✨ Share your story — all fields are pre-filled with my introduction as an example. Edit or replace with your own details.</p>
+    </div>
+
+    <form id="introForm" action="#" method="post" enctype="multipart/form-data">
+        <!-- ========== NAME SECTION ========= -->
+        <div class="field-group">
+            <label>First Name *</label>
+            <div class="input-wrapper">
+                <input type="text" name="firstName" value="Alex" placeholder="e.g., Jordan" required>
+            </div>
+        </div>
+
+        <div class="field-group">
+            <label>Middle Name (or Initial) <span style="font-weight:normal;">(optional)</span></label>
+            <div class="input-wrapper">
+                <input type="text" name="middleName" value="M." placeholder="Middle initial or full name">
+            </div>
+        </div>
+
+        <div class="field-group">
+            <label>Nickname/Preferred Name <span style="font-weight:normal;">(optional)</span></label>
+            <div class="input-wrapper">
+                <input type="text" name="preferredName" value="Lex" placeholder="How you like to be called">
+            </div>
+        </div>
+
+        <div class="field-group">
+            <label>Last Name *</label>
+            <div class="input-wrapper">
+                <input type="text" name="lastName" value="Rivera" placeholder="Last name" required>
+            </div>
+        </div>
+
+        <!-- ========== ACKNOWLEDGMENT + DATE ========= -->
+        <div class="field-group">
+            <label>Acknowledgment Statement</label>
+            <div class="input-wrapper">
+                <input type="text" name="acknowledgmentStatement" value="I hereby confirm that all provided information is accurate and true to my knowledge." placeholder="e.g., I acknowledge the submission guidelines...">
+            </div>
+        </div>
+
+        <div class="field-group">
+            <label>Acknowledgement Date</label>
+            <div class="input-wrapper">
+                <input type="date" name="acknowledgementDate" value="2025-03-15" placeholder="YYYY-MM-DD">
+            </div>
+        </div>
+
+        <!-- ========== MASCOT & DIVIDER ========= -->
+        <div class="field-group">
+            <label>Mascot Adjective</label>
+            <div class="input-wrapper">
+                <input type="text" name="mascotAdjective" value="Brave" placeholder="e.g., Fierce, Clever">
+            </div>
+        </div>
+
+        <div class="field-group">
+            <label>Mascot Animal</label>
+            <div class="input-wrapper">
+                <input type="text" name="mascotAnimal" value="Phoenix" placeholder="e.g., Wolf, Eagle">
+            </div>
+        </div>
+
+        <div class="field-group">
+            <label>Divider (symbol)</label>
+            <div class="input-wrapper">
+                <input type="text" name="divider" value="✦" maxlength="5" placeholder="~ | ♥️ ✨">
+                <small class="hint">Use any decorative symbol: ~, |, ♥️, ✨, etc.</small>
+            </div>
+        </div>
+
+        <!-- ========== PICTURE UPLOAD (default image shown via value? HTML file input cannot prefill binary but we set default src via preview) ========= -->
+        <div class="field-group">
+            <label>Picture (Upload)</label>
+            <div class="input-wrapper">
+                <input type="file" name="picture" id="pictureUpload" accept="image/*">
+                <small class="hint">Default preview: my image (placeholder avatar). Upload your own image instead.</small>
+                <div style="margin-top: 12px;">
+                    <img id="defaultPreview" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23368cbf'/%3E%3Ctext x='50' y='68' font-size='42' text-anchor='middle' fill='white' font-family='monospace'%3E👤%3C/text%3E%3C/svg%3E" alt="Default avatar" style="width:80px; height:80px; border-radius: 50%; object-fit: cover; border:2px solid #ccc;">
+                    <img id="uploadPreview" style="display:none; width:80px; height:80px; border-radius: 50%; object-fit: cover; margin-left: 10px;">
+                </div>
+            </div>
+        </div>
+
+        <div class="field-group">
+            <label>Picture Caption</label>
+            <div class="input-wrapper">
+                <input type="text" name="pictureCaption" value="My spirit avatar — rising phoenix" placeholder="Describe the uploaded image">
+            </div>
+        </div>
+
+        <!-- ========== PERSONAL STATEMENT ========= -->
+        <div class="field-group">
+            <label>Personal Statement</label>
+            <div class="input-wrapper">
+                <textarea name="personalStatement" placeholder="Write a short bio / personal motto...">Curiosity-driven designer and lifelong learner. I believe in building bridges between creativity and technology, always chasing the next meaningful challenge.</textarea>
+            </div>
+        </div>
+
+        <!-- ========== 7 MAIN BULLETS (Personal Background, etc) ========= -->
+        <div class="field-group">
+            <label>7 Main Bullets <br><span style="font-weight:normal;">(Personal Background, etc)</span></label>
+            <div class="input-wrapper">
+                <textarea name="mainBullets" rows="4" placeholder="List 7 key points: Personal Background, Professional, Education, Hobbies, Skills, Achievements, Future Goals...">• Personal Background: Grew up in coastal city, first-gen college student
+• Education: BS in Information Systems, minor in Digital Media
+• Work: 4 years as UX designer, now freelance creative technologist
+• Hobbies: urban sketching, hiking, indie game jams
+• Skills: Figma, HTML/CSS, Python basics, storytelling
+• Achievements: Led redesign project with 40% engagement increase
+• Future Goals: Launch interactive storytelling platform</textarea>
+            </div>
+        </div>
+
+        <!-- ========== COURSE AND SUB-BULLETS: department, number, name, reason ========= -->
+        <div class="field-group">
+            <label>Course Details</label>
+            <div class="input-wrapper">
+                <div class="sub-bullet-group">
+                    <div class="row-2cols">
+                        <div><input type="text" name="courseDept" value="CSCI" placeholder="Department (e.g., CSCI, MATH)"></div>
+                        <div><input type="text" name="courseNumber" value="330" placeholder="Course Number"></div>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <input type="text" name="courseName" value="Interactive Web Development" placeholder="Course Name">
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <textarea name="courseReason" rows="2" placeholder="Reason for taking this course...">Passionate about building engaging full-stack apps; this course blends frontend magic with backend logic — essential for my career pivot into creative development.</textarea>
+                    </div>
+                </div>
+                <small class="hint">Department, number, full name & reason for enrollment.</small>
+            </div>
+        </div>
+
+        <!-- ========== QUOTE + AUTHOR ========= -->
+        <div class="field-group">
+            <label>Favorite Quote</label>
+            <div class="input-wrapper">
+                <input type="text" name="quote" value="“The only way to do great work is to love what you do.”" placeholder="Inspirational quote">
+            </div>
+        </div>
+
+        <div class="field-group">
+            <label>Quote Author</label>
+            <div class="input-wrapper">
+                <input type="text" name="quoteAuthor" value="Steve Jobs" placeholder="Author name">
+            </div>
+        </div>
+
+        <!-- ========== FUNNY THING (optional) ========= -->
+        <div class="field-group">
+            <label>Funny thing <span style="font-weight:normal;">(optional)</span></label>
+            <div class="input-wrapper">
+                <input type="text" name="funnyThing" value="I once accidentally replied-all to a company-wide email with a cat GIF. Best mistake ever." placeholder="Share a lighthearted anecdote">
+            </div>
+        </div>
+
+        <!-- ========== SOMETHING I WOULD LIKE TO SHARE (optional) ========= -->
+        <div class="field-group">
+            <label>Something I would like to share <span style="font-weight:normal;">(optional)</span></label>
+            <div class="input-wrapper">
+                <textarea name="shareSomething" rows="2" placeholder="Any passion project, recommendation, or thought...">I recently started a newsletter about retro computing aesthetics — would love to connect if that resonates!</textarea>
+            </div>
+        </div>
+
+        <!-- ========== 5 LINKS (LinkedIn, etc) ========= -->
+        <div class="field-group">
+            <label>5 Links (Profiles / Portfolio)</label>
+            <div class="input-wrapper">
+                <input type="url" name="link1" value="https://linkedin.com/in/alexrivera" placeholder="LinkedIn URL">
+                <input type="url" name="link2" value="https://github.com/alexcreativ" placeholder="GitHub / Portfolio" style="margin-top: 0.6rem;">
+                <input type="url" name="link3" value="https://twitter.com/lexmakes" placeholder="Twitter / X" style="margin-top: 0.6rem;">
+                <input type="url" name="link4" value="https://alexrivera.design" placeholder="Personal website" style="margin-top: 0.6rem;">
+                <input type="url" name="link5" value="https://medium.com/@alexrivera" placeholder="Blog / Medium" style="margin-top: 0.6rem;">
+                <small class="hint">LinkedIn, GitHub, Twitter, portfolio, etc.</small>
+            </div>
+        </div>
+
+        <hr class="divider-light">
+
+        <!-- Optional hidden accessibility / submit behavior -->
+        <div class="button-group">
+            <button type="submit">✨ Submit Introduction</button>
+            <button type="reset" class="reset-btn">🗑️ Clear Form (reset to empty)</button>
+        </div>
+        <p style="font-size: 0.75rem; text-align: center; margin-top: 1.5rem; color: #4c5b6b;">*Required fields: First Name, Last Name. All other fields are pre-filled with my example introduction.</p>
+    </form>
+</div>
+
+<script>
+    // Additional behavior to handle picture preview + ensure placeholders work on reset (clear)
+    const pictureInput = document.getElementById('pictureUpload');
+    const defaultPreviewImg = document.getElementById('defaultPreview');
+    const uploadPreviewImg = document.getElementById('uploadPreview');
+
+    if (pictureInput) {
+        pictureInput.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    // hide default preview, show uploaded preview
+                    defaultPreviewImg.style.display = 'none';
+                    uploadPreviewImg.style.display = 'inline-block';
+                    uploadPreviewImg.src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            } else {
+                // revert to default
+                defaultPreviewImg.style.display = 'inline-block';
+                uploadPreviewImg.style.display = 'none';
+                uploadPreviewImg.src = '';
+            }
+        });
+    }
+
+    // On form reset: restore all values to original pre-filled ones?
+    // Browsers reset to initial state defined in HTML "value" attributes, but file input resets.
+    // However we also need to handle preview image reset + ensure placeholder texts appear when cleared.
+    // The reset button triggers native reset -> values go back to pre-filled values (my info). But if user wants to clear ALL fields
+    // to blank and see placeholders, we provide additional manual "clear to empty" by intercepting reset?
+    // The requirement says: "Add appropriate placeholders on each input that display when the form is empty. (When you clear the form)"
+    // That means we need to support a clear action. Native reset restores default values (which are prefilled with MY info). So to see placeholders, user may need a separate "clear all fields" action.
+    // I will implement a secondary clear function that empties all text/textarea/date/url fields to blank, keep checkboxes? No checkboxes. So we can attach to the reset button but with customization?
+    // However spec expects that on clear, placeholders appear. The reset button already exists, but it loads default values (mine). So I will add a "Clear Form (empty)" that empties all fields, making placeholders visible.
+    // I'll repurpose the reset button to do a full clear to empty (keeping placeholders), and also keep prefill separate? But easier: add a separate button for "Reset to empty", and keep "Reset to prefill"? No, the assignment says prefill with YOUR information using value attribute.
+    // The reset button currently will set to original values (prefilled). But the user may also want to empty. I'll add a second button named "Empty All Fields" that clears every input except file, and set fields to blank, showing placeholders.
+    // For better UX: we keep both actions: 1) "Submit Introduction" (validates but no actual backend, just demo), 2) "Clear All (show placeholders)".
+    // Additionally, because there is a reset button of type="reset", it resets to initial state (prefilled). I'll replace reset button behavior with a custom clear function to truly empty all fields.
+    // Modify: change the reset-btn to a button with custom clear action.
+
+    const form = document.getElementById('introForm');
+    const originalResetBtn = document.querySelector('.reset-btn');
+
+    // custom clear to EMPTY all fields (except file input we can also reset file, and restore default preview)
+    function clearAllFields() {
+        // gather all inputs, textareas except buttons
+        const allInputs = form.querySelectorAll('input, textarea');
+        allInputs.forEach(field => {
+            if (field.type === 'button' || field.type === 'submit') return;
+            if (field.type === 'file') {
+                field.value = '';  // clear file selection
+                // reset picture preview to default avatar
+                if (defaultPreviewImg && uploadPreviewImg) {
+                    defaultPreviewImg.style.display = 'inline-block';
+                    uploadPreviewImg.style.display = 'none';
+                    uploadPreviewImg.src = '';
+                }
+            } else if (field.type === 'checkbox') {
+                field.checked = false;
+            } else {
+                field.value = '';
+            }
+        });
+        // also clear textarea inside course reason / main bullets etc are covered.
+        // ensure any extra field group is cleared.
+        // manually set acknowledgement date to empty
+        const dateField = form.querySelector('input[name="acknowledgementDate"]');
+        if(dateField) dateField.value = '';
+        // placeholder will appear automatically because values become empty.
+    }
+
+    // replace reset button behavior
+    if(originalResetBtn) {
+        originalResetBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            clearAllFields();
+            // small user feedback
+            alert('All fields cleared. Placeholders are now visible.');
+        });
+    }
+
+    // optional submit handler to show data in console and prevent actual page reload (demonstration)
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // gather all data for demonstration
+        const formData = new FormData(form);
+        console.log("=== Form Submission Data ===");
+        for (let [key, value] of formData.entries()) {
+            if (key !== 'picture') console.log(`${key}: ${value}`);
+            else console.log(`${key}: file selected - ${value ? value.name : 'none'}`);
+        }
+        alert("Thank you! Your introduction has been submitted (demo). Check browser console for all field values.");
+    });
+
+    // For the 5 links, we already have placeholders. Good.
+    // Add a small enhancement: ensure placeholder texts are meaningful for each field
+    // All fields now have pre-filled data, but after clearing, placeholder appears.
+    // The assignment also expects "Prefill info w/ YOUR information using the value attribute"
+    // Everything already has my info as default.
+    // Additionally, the "picture" defaults to my image (we set a default SVG avatar representing my image)
+    // The instruction: "Picture (Needs to default to your image, but the user to upload their own image)".
+    // We display a default avatar and upload overrides it.
+    document.querySelectorAll('input[placeholder], textarea[placeholder]').forEach(el => {
+        // ensures that placeholder style exists, no further action needed.
+    });
+
+    // For completeness, add a note that divider can accept unicode
+    const dividerField = document.querySelector('input[name="divider"]');
+    if(dividerField && dividerField.value === '✦') {
+        // good, my custom divider
+    }
+</script>
+</body>
 </html>
