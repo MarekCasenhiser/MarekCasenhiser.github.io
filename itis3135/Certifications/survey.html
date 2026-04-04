@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Survey Form</title>
+
+    <h1 id="title">Cat Owner Survey</h1>
+    <link rel="stylesheet" href="styles/default.css" type="text/css" media="screen" />
+  </head>
+
+  <body>
+    <p id="description">Tell us about yourself and your cats! Help us learn more about cat owners and their feline companions.</p>
+    <form id="survey-form">
+
+    <label id="name-label">Your Name</label>
+    <label id="email-label">Your Email</label>
+    <label id="number-label">How many cats do you own?</label>
+
+      <input id= "name" type="text" id="name-label" placeholder="Enter your full name" required></input>
+      <input id="email" type="email" id="email-label" required placeholder="Enter your email address"></input>
+      <input id="number" type="number" min ="0" max="100" id="number-label" required placeholder="Number of cats"></input>
+      <select id="dropdown">
+        <option>Persian</option>
+        <option>Maine Coon</option>
+        <option>Siamese</option>
+        <option>Bengal</option>
+        <option>Sphynx</option>
+        <option>Ragdoll</option>
+        <option>Mixed Breed / Domestic Shorthair</option>
+      </select>
+      <fieldset id="btn-group" type="radio">
+      <input name="btn-group" attribute="value" value="indoor" type="radio"></input> Indoor only
+      <input name="btn-group" attribute="value" value="outdoor" type="radio"></input> Indoor and outdoor
+      </fieldset>
+      <input id="value" value="scratching-post" type="checkbox"></input> My cat uses a scratching post
+      <input id="value" value="window-perch" type="checkbox"></input> My cat has a window perch
+      <textarea placeholder="Tell us something unique or funny about your cat..."></textarea>
+      <input id="submit" type="submit" value="Submit Survey"></input>
+
+    </form>
+    <fieldset id="b2">
+    <input name="b2" attribute="value" value="dry-food" type="radio"></input> Dry food
+    <input name="b2" value="name" attribute="value" value="wet-food" type="radio"></input> Wet food
+    </fieldset>
+
+
+  </body>
+</html>

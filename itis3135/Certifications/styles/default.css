@@ -1,0 +1,9 @@
+  body {
+    background-color:#e5c58a;
+  }
+  header {
+      display: flex;
+      border: 2px solid;
+      border-radius: 2px;
+      background-color: #c67d2f;
+  }
