@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Personal Introduction Form | Submit Your Profile</title>
-    <link  href="scripts/introduction.js" type="text/css" media="screen" />
+    <script src="introduction.js" defer></script>
     <style>
         * {
             margin: 0;
@@ -190,6 +190,15 @@
 
         .reset-btn:hover {
             background: #4b5a6b;
+        }
+
+        .clear-btn {
+            background: #c0392b;
+            box-shadow: none;
+        }
+
+        .clear-btn:hover {
+            background: #922b21;
         }
 
         @media (max-width: 700px) {
@@ -391,125 +400,37 @@
 
         <!-- Optional hidden accessibility / submit behavior -->
         <div class="button-group">
-            <button type="submit">✨ Submit Introduction</button>
-            <button type="reset" class="reset-btn">🗑️ Clear Form (reset to empty)</button>
+            <button type="submit">✨ Submit</button>
+            <button type="reset" class="reset-btn">🔄 Reset</button>
+            <button type="button" class="clear-btn">🗑️ Clear</button>
         </div>
         <p style="font-size: 0.75rem; text-align: center; margin-top: 1.5rem; color: #4c5b6b;">*Required fields: First Name, Last Name. All other fields are pre-filled with my example introduction.</p>
     </form>
 </div>
 
 <script>
-    // Additional behavior to handle picture preview + ensure placeholders work on reset (clear)
-    const pictureInput = document.getElementById('pictureUpload');
+    // Picture upload preview — kept inline so it runs after DOM is ready
+    const pictureInput     = document.getElementById('pictureUpload');
     const defaultPreviewImg = document.getElementById('defaultPreview');
-    const uploadPreviewImg = document.getElementById('uploadPreview');
+    const uploadPreviewImg  = document.getElementById('uploadPreview');
 
     if (pictureInput) {
-        pictureInput.addEventListener('change', function(event) {
+        pictureInput.addEventListener('change', function (event) {
             const file = event.target.files[0];
             if (file) {
                 const reader = new FileReader();
-                reader.onload = function(e) {
-                    // hide default preview, show uploaded preview
+                reader.onload = function (e) {
                     defaultPreviewImg.style.display = 'none';
-                    uploadPreviewImg.style.display = 'inline-block';
-                    uploadPreviewImg.src = e.target.result;
-                }
+                    uploadPreviewImg.style.display  = 'inline-block';
+                    uploadPreviewImg.src            = e.target.result;
+                };
                 reader.readAsDataURL(file);
             } else {
-                // revert to default
                 defaultPreviewImg.style.display = 'inline-block';
-                uploadPreviewImg.style.display = 'none';
-                uploadPreviewImg.src = '';
+                uploadPreviewImg.style.display  = 'none';
+                uploadPreviewImg.src            = '';
             }
         });
-    }
-
-    // On form reset: restore all values to original pre-filled ones?
-    // Browsers reset to initial state defined in HTML "value" attributes, but file input resets.
-    // However we also need to handle preview image reset + ensure placeholder texts appear when cleared.
-    // The reset button triggers native reset -> values go back to pre-filled values (my info). But if user wants to clear ALL fields
-    // to blank and see placeholders, we provide additional manual "clear to empty" by intercepting reset?
-    // The requirement says: "Add appropriate placeholders on each input that display when the form is empty. (When you clear the form)"
-    // That means we need to support a clear action. Native reset restores default values (which are prefilled with MY info). So to see placeholders, user may need a separate "clear all fields" action.
-    // I will implement a secondary clear function that empties all text/textarea/date/url fields to blank, keep checkboxes? No checkboxes. So we can attach to the reset button but with customization?
-    // However spec expects that on clear, placeholders appear. The reset button already exists, but it loads default values (mine). So I will add a "Clear Form (empty)" that empties all fields, making placeholders visible.
-    // I'll repurpose the reset button to do a full clear to empty (keeping placeholders), and also keep prefill separate? But easier: add a separate button for "Reset to empty", and keep "Reset to prefill"? No, the assignment says prefill with YOUR information using value attribute.
-    // The reset button currently will set to original values (prefilled). But the user may also want to empty. I'll add a second button named "Empty All Fields" that clears every input except file, and set fields to blank, showing placeholders.
-    // For better UX: we keep both actions: 1) "Submit Introduction" (validates but no actual backend, just demo), 2) "Clear All (show placeholders)".
-    // Additionally, because there is a reset button of type="reset", it resets to initial state (prefilled). I'll replace reset button behavior with a custom clear function to truly empty all fields.
-    // Modify: change the reset-btn to a button with custom clear action.
-
-    const form = document.getElementById('introForm');
-    const originalResetBtn = document.querySelector('.reset-btn');
-
-    // custom clear to EMPTY all fields (except file input we can also reset file, and restore default preview)
-    function clearAllFields() {
-        // gather all inputs, textareas except buttons
-        const allInputs = form.querySelectorAll('input, textarea');
-        allInputs.forEach(field => {
-            if (field.type === 'button' || field.type === 'submit') return;
-            if (field.type === 'file') {
-                field.value = '';  // clear file selection
-                // reset picture preview to default avatar
-                if (defaultPreviewImg && uploadPreviewImg) {
-                    defaultPreviewImg.style.display = 'inline-block';
-                    uploadPreviewImg.style.display = 'none';
-                    uploadPreviewImg.src = '';
-                }
-            } else if (field.type === 'checkbox') {
-                field.checked = false;
-            } else {
-                field.value = '';
-            }
-        });
-        // also clear textarea inside course reason / main bullets etc are covered.
-        // ensure any extra field group is cleared.
-        // manually set acknowledgement date to empty
-        const dateField = form.querySelector('input[name="acknowledgementDate"]');
-        if(dateField) dateField.value = '';
-        // placeholder will appear automatically because values become empty.
-    }
-
-    // replace reset button behavior
-    if(originalResetBtn) {
-        originalResetBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            clearAllFields();
-            // small user feedback
-            alert('All fields cleared. Placeholders are now visible.');
-        });
-    }
-
-    // optional submit handler to show data in console and prevent actual page reload (demonstration)
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        // gather all data for demonstration
-        const formData = new FormData(form);
-        console.log("=== Form Submission Data ===");
-        for (let [key, value] of formData.entries()) {
-            if (key !== 'picture') console.log(`${key}: ${value}`);
-            else console.log(`${key}: file selected - ${value ? value.name : 'none'}`);
-        }
-        alert("Thank you! Your introduction has been submitted (demo). Check browser console for all field values.");
-    });
-
-    // For the 5 links, we already have placeholders. Good.
-    // Add a small enhancement: ensure placeholder texts are meaningful for each field
-    // All fields now have pre-filled data, but after clearing, placeholder appears.
-    // The assignment also expects "Prefill info w/ YOUR information using the value attribute"
-    // Everything already has my info as default.
-    // Additionally, the "picture" defaults to my image (we set a default SVG avatar representing my image)
-    // The instruction: "Picture (Needs to default to your image, but the user to upload their own image)".
-    // We display a default avatar and upload overrides it.
-    document.querySelectorAll('input[placeholder], textarea[placeholder]').forEach(el => {
-        // ensures that placeholder style exists, no further action needed.
-    });
-
-    // For completeness, add a note that divider can accept unicode
-    const dividerField = document.querySelector('input[name="divider"]');
-    if(dividerField && dividerField.value === '✦') {
-        // good, my custom divider
     }
 </script>
 </body>
