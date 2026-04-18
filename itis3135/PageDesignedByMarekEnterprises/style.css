@@ -1,23 +1,170 @@
+/* ===== Marek Corp Tattoo Studio — style.css ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;500&display=swap');
+
+/* ===== Reset & Base ===== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    background-color: #1A0A0E;
-    color: #650304;
+    background-color: #111111;
+    color: #e8e0d5;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
 }
+
+/* Ink-red top accent bar */
+body::before {
+    content: '';
+    display: block;
+    height: 4px;
+    background: #8b1a1a;
+    width: 100%;
+}
+
+/* ===== Header ===== */
+header {
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #2e2e2e;
+    padding: 2.5rem 2rem 2rem;
+    text-align: center;
+}
+
+header::after {
+    content: '✦  Est. Since Day One  ✦';
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: #8b1a1a;
+    margin-top: 0.4rem;
+    text-transform: uppercase;
+}
+
+header h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-weight: 900;
+    color: #f0e8d8;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+/* ===== Main layout ===== */
+main {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 2rem;
+}
+
+/* ===== Section headings ===== */
+h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #f0e8d8;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #2e2e2e;
+}
+
+h2::before {
+    content: '// ';
+    color: #8b1a1a;
+    font-size: 1rem;
+}
+
+/* ===== Logo image ===== */
+img {
+    display: block;
+    margin: 1.5rem auto;
+    border: 2px solid #2e2e2e;
+    border-radius: 4px;
+    filter: grayscale(20%) contrast(1.05);
+}
+
+/* ===== Body copy ===== */
 p {
-    font-family: sans-serif;
+    color: #c5bdb0;
+    margin-bottom: 1.2rem;
+    max-width: 680px;
 }
-a {
-    color: #1A0A0E;
-    margin: auto;
+
+/* ===== Service list ===== */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
 }
-footer{
-    color: #D71515;
-    margin: auto;
+
+ul li {
+    color: #c5bdb0;
+    padding: 0.55rem 0.75rem;
+    border-left: 3px solid #8b1a1a;
+    margin-bottom: 0.5rem;
+    background-color: #1a1a1a;
+    transition: background-color 0.2s ease;
 }
-h1{
-    font-family: 'AdwaitaMono Nerd Font', monospace;
-    margin: 25px;
+
+ul li:hover {
+    background-color: #222222;
+    color: #f0e8d8;
 }
-h2{
-    font-family: 'AdwaitaMono Nerd Font', monospace;
-    margin: 25px;
+
+ul li::before {
+    content: '→ ';
+    color: #8b1a1a;
+    font-weight: 700;
+}
+
+/* ===== Footer ===== */
+footer {
+    margin-top: 4rem;
+    padding: 2rem 1.5rem;
+    background-color: #1a1a1a;
+    border-top: 1px solid #2e2e2e;
+    text-align: center;
+}
+
+footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 2rem;
+    margin-top: 1rem;
+}
+
+footer ul li {
+    border-left: none;
+    background: none;
+    padding: 0;
+    font-size: 0.9rem;
+    color: #888078;
+}
+
+footer ul li::before {
+    content: '';
+}
+
+footer ul li:hover {
+    background: none;
+    color: #c5bdb0;
+}
+
+/* ===== Scrollbar (webkit) ===== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #111111; }
+::-webkit-scrollbar-thumb { background: #2e2e2e; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #8b1a1a; }
+
+/* ===== Text selection ===== */
+::selection {
+    background: #8b1a1a;
+    color: #f0e8d8;
 }
