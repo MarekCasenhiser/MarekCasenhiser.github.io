@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <link rel="stylesheet" href="styles/default.css">
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Marek Casenhiser/ Slideshow</title>
+                <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+                <script src="scripts/slideshow.js" crossorigin="anonymous"></script>
+        </head>
+        <body>
+<!-- Container for the image gallery -->
+<div class="container">
+
+  <!-- Full-width images with number text -->
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+      <img src="img_woods_wide.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+      <img src="img_5terre_wide.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+      <img src="img_mountains_wide.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+      <img src="img_lights_wide.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+      <img src="img_nature_wide.jpg" style="width:100%">
+  </div>
+
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  <!-- Image text -->
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <!-- Thumbnail images -->
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="images/magnesium.jpeg" style="width:100%" onclick="currentSlide(1)" alt="magnesium">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/Argon.jpg" style="width:100%" onclick="currentSlide(2)" alt="Argon">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/Radon.jpeg" style="width:100%" onclick="currentSlide(3)" alt="Radon">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/Europium.jpg" style="width:100%" onclick="currentSlide(4)" alt="Europium">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/potassium.jpg" style="width:100%" onclick="currentSlide(5)" alt="potassium">
+    </div>
+  </div>
+</div>
+
+        </body>
+
+</html>
