@@ -1,23 +1,31 @@
 body {
     background-color: #282A36;
     color: #6272A4;
+    text-align: center;
 }
 p {
     font-family: sans-serif;
+    text-align: center;
 }
 a {
     color: #BD93F9;
     margin: auto;
+    text-align: center;
 }
 footer{
     color: #BD93F9;
     margin: auto;
+    text-align:center;
 }
 h1{
     font-family: 'AdwaitaMono Nerd Font', monospace;
     margin: 25px;
+    text-align: center;
+
+
 }
 h2{
     font-family: 'AdwaitaMono Nerd Font', monospace;
     margin: 25px;
+    text-align: center;
 }
